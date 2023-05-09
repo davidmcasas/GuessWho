@@ -1,0 +1,304 @@
+#guesswho-wrapper {
+    padding: 20px;
+    width: 100%;
+    background-color: red;
+    font-family: "Roboto", "Segoe Ui", serif;
+    font-weight: bold;
+    color: white;
+    min-height: 745px;
+}
+
+#guesswho-result {
+    text-align: center;
+    font-size: 24px;
+}
+
+#guesswho-result-portraits {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#guesswho-result-portraits span {
+    color: white;
+    font-size: 36px;
+}
+
+#guesswho-result .character-name {
+    text-transform: uppercase;
+}
+
+#guesswho-result-text {
+    text-align: center;
+    font-size: 32px;
+    color: white;
+}
+
+#guesswho-selected, #guesswho-correct {
+    margin: 0 20px;
+}
+
+#guesswho-selected img, #guesswho-correct img {
+    height: 320px;
+    width: 320px;
+    border: solid 12px black;
+    border-radius: 100%;
+    background-color: white;
+}
+
+#guesswho-characters {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+#guesswho-answer {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 24px;
+}
+
+#guesswho-answer #guesswho-answer-response {
+    text-transform: uppercase;
+    font-size: 28px;
+}
+
+.character-portrait img {
+    background-color: white;
+    border: black 4px solid;
+    border-radius: 100%;
+}
+
+#guesswho-questions {
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: center;
+    align-items: center;
+    /*height: 210px;*/
+    margin-bottom: 20px;
+}
+.guesswho-question {
+    font-size: 18px;
+    border: black 4px solid;
+    color: black;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    margin: 4px;
+    min-height: 64px;
+    /*width: 400px;*/
+    width: 25%;
+}
+.guesswho-question:hover {
+    background-color: yellow;
+}
+
+#guesswho-pick {
+    text-align: center;
+}
+
+#guesswho-pick button {
+    font-size: 20px;
+    border: black 4px solid;
+    color: black;
+    background-color: greenyellow;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+#guesswho-pick button:hover {
+    background-color: limegreen;
+}
+
+.character-portrait {
+    margin: 10px 10px 20px 10px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    perspective: 200px; /* Remove this if you don't want the 3D effect */
+    cursor: pointer;
+}
+
+.character-portrait-inner {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.character-portrait img {
+    width: 100px;
+    height: 100px;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.character-portrait.flipped .character-portrait-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.character-portrait-front, .character-portrait-back {
+    position: absolute;
+    padding: 0;
+    width: 100px;
+    height: 100px;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.character-portrait-front {
+    color: white;
+}
+
+/* Style the back side */
+.character-portrait-back {
+    background-color: darkred;
+    border: black 4px solid;
+    transform: rotateY(180deg);
+    border-radius: 100%;
+    color: white;
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.character-portrait img:hover {
+    border: yellow 8px solid;
+}
+
+
+@media(max-height: 920px) {
+
+    #guesswho-wrapper {
+        padding: 10px;
+        min-height: 660px;
+    }
+
+
+    #guesswho-answer {
+        font-size: 20px;
+    }
+
+    #guesswho-answer #guesswho-answer-response {
+        font-size: 24px;
+    }
+
+    .character-portrait-inner {
+        width: 100px;
+        height: 100px;
+    }
+    .character-portrait img {
+        width: 100px;
+        height: 100px;
+    }
+    .character-portrait-front, .character-portrait-back {
+        width: 100px;
+        height: 100px;
+    }
+
+    .guesswho-question {
+        font-size: 16px;
+        min-height: 48px;
+    }
+
+    #guesswho-pick button {
+        font-size: 14px;
+        padding: 8px;
+        border-radius: 10px;
+    }
+
+    #guesswho-result-text, #guesswho-result-portraits span {
+        font-size: 28px;
+    }
+
+    #guesswho-selected, #guesswho-correct {
+        margin: 0 10px;
+    }
+
+    #guesswho-selected img, #guesswho-correct img {
+        height: 240px;
+        width: 240px;
+    }
+}
+
+@media(max-width: 600px) {
+
+    #guesswho-wrapper {
+        min-height: 75vh;
+        padding: 10px 10px 100px 10px;
+    }
+
+    #guesswho-answer {
+        font-size: 20px;
+    }
+
+    #guesswho-answer #guesswho-answer-response {
+        font-size: 24px;
+    }
+
+    .character-portrait {
+        font-size: 10px;
+        margin: 0 0 20px 0;
+    }
+
+    .character-portrait-inner {
+        width: 100px;
+        height: 100px;
+    }
+
+    .character-portrait img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .character-portrait-front, .character-portrait-back {
+        width: 100px;
+        height: 100px;
+    }
+
+    #guesswho-questions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .guesswho-question {
+        font-size: 12px;
+        width: 45%;
+    }
+
+    #guesswho-pick button {
+        font-size: 14px;
+        padding: 8px;
+        border-radius: 10px;
+    }
+
+    #guesswho-result-text, #guesswho-result-portraits span {
+        font-size: 16px;
+    }
+
+    #guesswho-selected, #guesswho-correct {
+        margin: 0 10px;
+    }
+
+    #guesswho-selected img, #guesswho-correct img {
+        border: 6px solid black;
+        height: 120px;
+        width: 120px;
+    }
+}

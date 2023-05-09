@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quién es Quién</title>
+    <meta property="og:title" content="¿Quién es Quién?" />
+    <meta property="og:description" content="Versión para un jugador del famoso juego de adivinar personajes."  />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="guess_who.css">
+    <style>
+        body {
+            background-color: red;
+            display: flex;
+            justify-content: center;
+        }
+        #guesswho-wrapper {
+            max-width: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div id="guesswho-wrapper">
+        <div id="guesswho-game">
+            <div id="guesswho-help">
+                <p class="text-center font-weight-bold" style="color:white; margin: auto;">Haz preguntas para descubrir quién es el personaje secreto. Pulsa sobre sus retratos para ocultar los que descartes. Cuando tengas la respuesta, pulsa en "¡LO TENGO!" y selecciona el personaje que creas correcto.</p>
+            </div>
+            <div id="guesswho-characters"></div>
+            <div id="guesswho-answer">
+                <div id="guesswho-answer-question">¡Elige una pregunta!</div>
+                <div id="guesswho-answer-response">&nbsp;</div>
+            </div>
+            <div id="guesswho-questions"></div>
+            <div id="guesswho-pick">
+                <button id="guesswho-pick-button">¡LO TENGO!</button>
+            </div>
+        </div>
+        <div id="guesswho-result" class="d-none">
+            <p id="guesswho-result-text"></p>
+            <div id="guesswho-result-portraits">
+                <div id="guesswho-selected"></div>
+                <div id="guesswho-correct"></div>
+            </div>
+            <button class="btn btn-light mt-4" onClick="window.location.reload();">Jugar otra partida</button>
+        </div>
+    </div>
+
+    <footer>
+        <script src="guess_who.js"></script>
+    </footer>
+</body>
+</html>
